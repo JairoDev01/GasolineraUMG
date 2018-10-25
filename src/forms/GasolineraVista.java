@@ -46,6 +46,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel32 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -61,11 +62,13 @@ public class GasolineraVista extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jProgressBar3 = new javax.swing.JProgressBar();
+        jLabel34 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jProgressBar4 = new javax.swing.JProgressBar();
+        jLabel35 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -75,11 +78,14 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gasolinera");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bomba2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
@@ -125,34 +131,38 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, 210, 90));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba1"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba4"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setText("Q.");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, -1));
+
+        jTextField1.setBorder(null);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton1.setText("Iniciar");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
         jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
+        jLabel32.setText("00.00");
+        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 40, 200, 220));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carwash.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 310, 260));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 320, 300));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 600, 210, 90));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 540, 210, 90));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 600, 210, 90));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 540, 210, 90));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 600, 210, 90));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 540, 210, 90));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 600, 210, 90));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 210, 90));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba1"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -175,24 +185,34 @@ public class GasolineraVista extends javax.swing.JFrame {
 
         jLabel18.setText("Q.");
         jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, -1));
+
+        jTextField3.setBorder(null);
+        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton3.setText("Iniciar");
         jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
         jPanel3.add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
+        jLabel34.setText("00.00");
+        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 200, 220));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba1"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba3"));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setText("Q.");
         jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
-        jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, -1));
+
+        jTextField4.setBorder(null);
+        jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton4.setText("Iniciar");
         jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
         jPanel4.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
+
+        jLabel35.setText("00.00");
+        jPanel4.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 40, 200, 220));
 
@@ -203,7 +223,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, 110));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carrtera.jpg"))); // NOI18N
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, -1, 110));
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 550, -1, 110));
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carrtera.jpg"))); // NOI18N
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 410, 660, 110));
@@ -212,7 +232,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, 110));
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carrtera.jpg"))); // NOI18N
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 610, -1, 110));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, -1, 110));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 270, -1, 240));
@@ -223,16 +243,20 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
         getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, 240));
 
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, 430));
-
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
         getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 370, -1, 430));
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
         getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 370, -1, 430));
 
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, 430));
+
+        jLabel33.setText("00.00");
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -305,6 +329,10 @@ public class GasolineraVista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
