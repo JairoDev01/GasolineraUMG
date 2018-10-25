@@ -20,8 +20,8 @@ public class ColaN {
         return home == null;
     }
 
-    public void push(int elemento) {
-        Nodo nuevo = new Nodo(elemento);
+    public void push(int dato) {
+        Nodo nuevo = new Nodo(dato);
         if (empty()) {
             home = nuevo;
         } else {

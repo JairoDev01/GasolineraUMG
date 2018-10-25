@@ -19,14 +19,22 @@ public class GasolineraVista extends javax.swing.JFrame {
      * Creates new form GasolineraVista
      */
     ColaN fifo = new ColaN();
-    private int sizeP = 5;
+    private final int sizeP = 5;
     private int con = 0;
+ 
     ArrayList<JLabel> autosL = new ArrayList<>();
-
+    ArrayList<JLabel> autosB = new ArrayList<>();
+    private boolean bomba1=false;
+    private boolean bomba2=false;
+    private boolean bomba3=false;
+    private boolean bomba4=false;
+    
     public GasolineraVista() {
         initComponents();
         ocultarCarros();
-        insertarCarros();
+        insertarCarrosL();  
+        insertarCarrosB();
+
     }
 
     /**
@@ -38,15 +46,15 @@ public class GasolineraVista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bomba2 = new javax.swing.JLabel();
-        bomba3 = new javax.swing.JLabel();
-        bomba1 = new javax.swing.JLabel();
+        gas2 = new javax.swing.JLabel();
+        gas3 = new javax.swing.JLabel();
+        gas1 = new javax.swing.JLabel();
         carF3 = new javax.swing.JLabel();
         carF6 = new javax.swing.JLabel();
         carF5 = new javax.swing.JLabel();
         carF1 = new javax.swing.JLabel();
         carF4 = new javax.swing.JLabel();
-        bomba4 = new javax.swing.JLabel();
+        gas4 = new javax.swing.JLabel();
         carB4 = new javax.swing.JLabel();
         carF2 = new javax.swing.JLabel();
         carB1 = new javax.swing.JLabel();
@@ -92,23 +100,25 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gasolinera");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bomba2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        bomba2.setText(" ");
-        getContentPane().add(bomba2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
+        gas2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        gas2.setText(" ");
+        getContentPane().add(gas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
 
-        bomba3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        getContentPane().add(bomba3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, -1));
+        gas3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        getContentPane().add(gas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, -1));
 
-        bomba1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        getContentPane().add(bomba1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        gas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        getContentPane().add(gas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         carF3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
         getContentPane().add(carF3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 210, 90));
@@ -125,8 +135,8 @@ public class GasolineraVista extends javax.swing.JFrame {
         carF4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
         getContentPane().add(carF4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 400, 210, 90));
 
-        bomba4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        getContentPane().add(bomba4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, -1, -1));
+        gas4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        getContentPane().add(gas4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, -1, -1));
 
         carB4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
         getContentPane().add(carB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 270, 210, 90));
@@ -184,11 +194,13 @@ public class GasolineraVista extends javax.swing.JFrame {
 
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField2.setBorder(null);
+        jTextField2.setEnabled(false);
         panelB1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton2.setText("Iniciar");
+        jButton2.setEnabled(false);
         panelB1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        panelB1.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
+        panelB1.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 40));
 
         getContentPane().add(panelB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 200, 220));
 
@@ -267,13 +279,29 @@ public class GasolineraVista extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 680, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 690, -1, -1));
 
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, 430));
+        jButton6.setText("Verificar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 690, -1, -1));
 
         jLabel33.setText("00.00");
         getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+
+        jButton7.setText("prueba");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 690, -1, -1));
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, 430));
 
         pack();
         setLocationRelativeTo(null);
@@ -289,6 +317,54 @@ public class GasolineraVista extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       if(fifo.sizeC()==0){
+           System.out.println("No hay carros en la fila");
+       }else{
+           if(bomba1&&bomba2&&bomba3&&bomba4){
+               System.out.println("Todas estan ocupadas");
+           }else{
+               this.autosB.get(verificarBomba()).setVisible(true);
+           }
+           
+       }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        bomba3=false;
+        this.autosB.get(2).setVisible(false);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private int verificarBomba() {
+        int pos =0;
+           if(!bomba1){
+               pos=0;
+               bomba1=true;
+               return pos;
+           }
+           if(!bomba2){
+               pos=1;
+               bomba2=true;
+               return pos;
+           }
+           
+           if(!bomba3){
+               pos=2;
+               bomba3=true;
+               return pos;
+           }
+           if(!bomba4){
+               pos=3;
+               bomba4=true;
+               return pos;
+           }else{
+               pos=4;
+               
+               System.out.println("Todas las bombas estan ocupadas. porfavor espere....");
+               return pos;
+           }
+           
+    }
     /**
      * @param args the command line arguments
      */
@@ -342,7 +418,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         carW4.setVisible(false);
     }
 
-    private void insertarCarros() {
+    private void insertarCarrosL() {
 
         autosL.add(carF1);
         autosL.add(carF2);
@@ -352,11 +428,13 @@ public class GasolineraVista extends javax.swing.JFrame {
         autosL.add(carF6);
 
     }
+    private void insertarCarrosB() {
+        autosB.add(carB1);
+        autosB.add(carB2);
+        autosB.add(carB3);
+        autosB.add(carB4);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bomba1;
-    private javax.swing.JLabel bomba2;
-    private javax.swing.JLabel bomba3;
-    private javax.swing.JLabel bomba4;
     private javax.swing.JLabel carB1;
     private javax.swing.JLabel carB2;
     private javax.swing.JLabel carB3;
@@ -371,11 +449,17 @@ public class GasolineraVista extends javax.swing.JFrame {
     private javax.swing.JLabel carW2;
     private javax.swing.JLabel carW3;
     private javax.swing.JLabel carW4;
+    private javax.swing.JLabel gas1;
+    private javax.swing.JLabel gas2;
+    private javax.swing.JLabel gas3;
+    private javax.swing.JLabel gas4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel17;
@@ -410,4 +494,6 @@ public class GasolineraVista extends javax.swing.JFrame {
     private javax.swing.JPanel panelB3;
     private javax.swing.JPanel panelB4;
     // End of variables declaration//GEN-END:variables
+
+  
 }
