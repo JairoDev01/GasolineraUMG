@@ -6,16 +6,16 @@ package gasolinera;
  * @author Jairo
  */
 public class Nodo {
-    int dato;
-    Nodo siguiente;
+    int auto;
+    Nodo next;
     public Nodo(int d){
-        dato=d;
-        siguiente = null;
+        auto=d;
+        next = null;
     }
 
     @Override
     public String toString() {
-        return "dato=" + dato ;
+        return "dato=" + auto ;
     }
     
     

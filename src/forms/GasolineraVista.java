@@ -5,6 +5,10 @@
  */
 package forms;
 
+import gasolinera.ColaN;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+
 /**
  *
  * @author JairoDev
@@ -14,8 +18,15 @@ public class GasolineraVista extends javax.swing.JFrame {
     /**
      * Creates new form GasolineraVista
      */
+    ColaN fifo = new ColaN();
+    private int sizeP = 5;
+    private int con = 0;
+    ArrayList<JLabel> autosL = new ArrayList<>();
+
     public GasolineraVista() {
         initComponents();
+        ocultarCarros();
+        insertarCarros();
     }
 
     /**
@@ -30,40 +41,40 @@ public class GasolineraVista extends javax.swing.JFrame {
         bomba2 = new javax.swing.JLabel();
         bomba3 = new javax.swing.JLabel();
         bomba1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        carF3 = new javax.swing.JLabel();
+        carF6 = new javax.swing.JLabel();
+        carF5 = new javax.swing.JLabel();
+        carF1 = new javax.swing.JLabel();
+        carF4 = new javax.swing.JLabel();
         bomba4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        carB4 = new javax.swing.JLabel();
+        carF2 = new javax.swing.JLabel();
+        carB1 = new javax.swing.JLabel();
+        carB2 = new javax.swing.JLabel();
+        carB3 = new javax.swing.JLabel();
+        panelB4 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabel32 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        carW3 = new javax.swing.JLabel();
+        carW1 = new javax.swing.JLabel();
+        carW4 = new javax.swing.JLabel();
+        carW2 = new javax.swing.JLabel();
+        panelB1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jProgressBar2 = new javax.swing.JProgressBar();
-        jPanel3 = new javax.swing.JPanel();
+        panelB2 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jProgressBar3 = new javax.swing.JProgressBar();
         jLabel34 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        panelB3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
@@ -80,6 +91,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
 
@@ -98,123 +110,123 @@ public class GasolineraVista extends javax.swing.JFrame {
         bomba1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
         getContentPane().add(bomba1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 210, 90));
+        carF3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carF3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 210, 90));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 400, 210, 90));
+        carF6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carF6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 400, 210, 90));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 400, 210, 90));
+        carF5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carF5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 400, 210, 90));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 210, 90));
+        carF1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 210, 90));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 400, 210, 90));
+        carF4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carF4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 400, 210, 90));
 
         bomba4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
         getContentPane().add(bomba4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 270, 210, 90));
+        carB4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 270, 210, 90));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 210, 90));
+        carF2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 210, 90));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 210, 90));
+        carB1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 210, 90));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 210, 90));
+        carB2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 210, 90));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, 210, 90));
+        carB3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, 210, 90));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba4"));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelB4.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba4"));
+        panelB4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setText("Q.");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
 
         jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton1.setText("Iniciar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
+        panelB4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        panelB4.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
         jLabel32.setText("00.00");
-        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        panelB4.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 40, 200, 220));
+        getContentPane().add(panelB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 40, 200, 220));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carwash.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 320, 300));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 540, 210, 90));
+        carW3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carW3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 540, 210, 90));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 540, 210, 90));
+        carW1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carW1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 540, 210, 90));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 540, 210, 90));
+        carW4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carW4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 540, 210, 90));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 210, 90));
+        carW2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
+        getContentPane().add(carW2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 210, 90));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba1"));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelB1.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba1"));
+        panelB1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setText("Q.");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
 
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField2.setBorder(null);
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton2.setText("Iniciar");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        jPanel2.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
+        panelB1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        panelB1.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 200, 220));
+        getContentPane().add(panelB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 200, 220));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba2"));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelB2.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba2"));
+        panelB2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setText("Q.");
-        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
 
         jTextField3.setBorder(null);
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton3.setText("Iniciar");
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        jPanel3.add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
+        panelB2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        panelB2.add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
         jLabel34.setText("00.00");
-        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        panelB2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 200, 220));
+        getContentPane().add(panelB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 200, 220));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba3"));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelB3.setBorder(javax.swing.BorderFactory.createTitledBorder("Bomba3"));
+        panelB3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setText("Q.");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
 
         jTextField4.setBorder(null);
-        jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
         jButton4.setText("Iniciar");
-        jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        jPanel4.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
+        panelB3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        panelB3.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
         jLabel35.setText("00.00");
-        jPanel4.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        panelB3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 40, 200, 220));
+        getContentPane().add(panelB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 40, 200, 220));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carrtera.jpg"))); // NOI18N
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 660, 110));
@@ -249,6 +261,14 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
         getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 370, -1, 430));
 
+        jButton5.setText("Nuevo Carro");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 680, -1, -1));
+
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
         getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, 430));
 
@@ -258,6 +278,16 @@ public class GasolineraVista extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (fifo.sizeC() > sizeP) {
+            System.out.println("Ya no se permiten carros");
+        } else {
+            fifo.push(con);
+            autosL.get(con).setVisible(true);
+            con++;
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -295,27 +325,62 @@ public class GasolineraVista extends javax.swing.JFrame {
         });
     }
 
+    private void ocultarCarros() {
+        carB1.setVisible(false);
+        carB2.setVisible(false);
+        carB3.setVisible(false);
+        carB4.setVisible(false);
+        carF1.setVisible(false);
+        carF2.setVisible(false);
+        carF3.setVisible(false);
+        carF4.setVisible(false);
+        carF5.setVisible(false);
+        carF6.setVisible(false);
+        carW1.setVisible(false);
+        carW2.setVisible(false);
+        carW3.setVisible(false);
+        carW4.setVisible(false);
+    }
+
+    private void insertarCarros() {
+
+        autosL.add(carF1);
+        autosL.add(carF2);
+        autosL.add(carF3);
+        autosL.add(carF4);
+        autosL.add(carF5);
+        autosL.add(carF6);
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bomba1;
     private javax.swing.JLabel bomba2;
     private javax.swing.JLabel bomba3;
     private javax.swing.JLabel bomba4;
+    private javax.swing.JLabel carB1;
+    private javax.swing.JLabel carB2;
+    private javax.swing.JLabel carB3;
+    private javax.swing.JLabel carB4;
+    private javax.swing.JLabel carF1;
+    private javax.swing.JLabel carF2;
+    private javax.swing.JLabel carF3;
+    private javax.swing.JLabel carF4;
+    private javax.swing.JLabel carF5;
+    private javax.swing.JLabel carF6;
+    private javax.swing.JLabel carW1;
+    private javax.swing.JLabel carW2;
+    private javax.swing.JLabel carW3;
+    private javax.swing.JLabel carW4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -326,23 +391,12 @@ public class GasolineraVista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
     private javax.swing.JProgressBar jProgressBar3;
@@ -351,5 +405,9 @@ public class GasolineraVista extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JPanel panelB1;
+    private javax.swing.JPanel panelB2;
+    private javax.swing.JPanel panelB3;
+    private javax.swing.JPanel panelB4;
     // End of variables declaration//GEN-END:variables
 }
