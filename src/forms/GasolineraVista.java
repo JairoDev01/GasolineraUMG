@@ -21,7 +21,7 @@ public class GasolineraVista extends javax.swing.JFrame {
     ColaN fifo = new ColaN();
     private final int sizeP = 5;
     private int con = 0;
- 
+    
     ArrayList<JLabel> autosL = new ArrayList<>();
     ArrayList<JLabel> autosB = new ArrayList<>();
     private boolean bomba1=false;
@@ -308,23 +308,37 @@ public class GasolineraVista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if (fifo.sizeC() > sizeP) {
+        if (fifo.size()> sizeP) {
             System.out.println("Ya no se permiten carros");
         } else {
             fifo.push(con);
-            autosL.get(con).setVisible(true);
+            for (int i = 0; i < fifo.size(); i++) {
+                if(autosL.get(i).isVisible()==false){
+                    autosL.get(i).setVisible(true);
+                    break;
+                }
+            }
+            //autosL.get(con).setVisible(true);
+            System.out.println(con);
             con++;
+            
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       if(fifo.sizeC()==0){
+       if(fifo.size()==0){
            System.out.println("No hay carros en la fila");
        }else{
            if(bomba1&&bomba2&&bomba3&&bomba4){
                System.out.println("Todas estan ocupadas");
            }else{
+               int i=fifo.pop();
+               System.out.println("Se saco el elemento"+i);
+               con--;
                this.autosB.get(verificarBomba()).setVisible(true);
+               this.autosL.get(con).setVisible(false);
+               
+              
            }
            
        }
