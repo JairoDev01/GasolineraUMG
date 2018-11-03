@@ -53,7 +53,7 @@ public class Bomba1 extends Thread {
         }
         carB1.setVisible(false);
         if (fifoCar.size() < 4) {
-            if (cant > 10) {
+            if (cant > 150) {
                 fifoCar.push(cantCar);
                 System.out.println("CarWash: " + cantCar);
                 for (int i = 0; i < fifoCar.size(); i++) {
