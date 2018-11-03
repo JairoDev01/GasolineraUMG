@@ -19,6 +19,7 @@ public class Bomba1 extends Thread {
 
     private final JLabel lprecio1;
     private final JLabel carB1;
+    private final JLabel carM;
     private final JProgressBar var;
     private final int posBomba;
     private final int cant;
@@ -26,7 +27,7 @@ public class Bomba1 extends Thread {
     private ArrayList<JLabel> carros;
     ColaN fifoCar;
 
-    public Bomba1(JLabel lprecio1, JProgressBar var, int cant, JLabel carb1, int posBomba, ColaN cola, int conCar, ArrayList<JLabel> carrosWash) {
+    public Bomba1(JLabel lprecio1, JProgressBar var, int cant, JLabel carb1, int posBomba, ColaN cola, int conCar, ArrayList<JLabel> carrosWash,JLabel carM) {
         this.lprecio1 = lprecio1;
         this.var = var;
         this.cant = cant;
@@ -35,6 +36,7 @@ public class Bomba1 extends Thread {
         this.fifoCar = cola;
         this.cantCar = conCar;
         this.carros = carrosWash;
+        this.carM = carM;
         var.setMaximum(cant);
 
     }
@@ -52,6 +54,7 @@ public class Bomba1 extends Thread {
             }
         }
         carB1.setVisible(false);
+        carM.setVisible(false);
         if (fifoCar.size() < 4) {
             if (cant > 150) {
                 fifoCar.push(cantCar);
