@@ -20,12 +20,14 @@ public class MovimientoCar extends Thread {
    private int tiempo=3000;
    private JLabel carV;
    private int pos;
+   private JButton btnIniciar;
 
 
-    public MovimientoCar(JLabel carro,JLabel carV,int pos) {
+    public MovimientoCar(JLabel carro,JLabel carV,int pos,JButton btnIniciar) {
         this.car = carro;
         this.carV = carV;
         this.pos = pos;
+        this.btnIniciar = btnIniciar;
     }
 
     @Override
@@ -48,6 +50,7 @@ public class MovimientoCar extends Thread {
         }
         car.setVisible(true);
         carV.setVisible(true);
+        btnIniciar.setEnabled(true);
        
     }
 

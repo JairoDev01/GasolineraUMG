@@ -521,7 +521,7 @@ public class GasolineraVista extends javax.swing.JFrame {
             habilitarCampos(pos);
             carM1.setLocation(1270, 270);
             carM1.setVisible(true);
-            this.carMov = new MovimientoCar(carM1,this.autosB.get(pos),90);
+            this.carMov = new MovimientoCar(carM1,this.autosB.get(pos),90,btnB1);
             carMov.start();
             return pos;
         }
@@ -531,7 +531,7 @@ public class GasolineraVista extends javax.swing.JFrame {
             habilitarCampos(pos);
             carM2.setLocation(1270, 270);
             carM2.setVisible(true);
-            this.carMov = new MovimientoCar(carM2,this.autosB.get(pos),430);
+            this.carMov = new MovimientoCar(carM2,this.autosB.get(pos),430,btnB2);
             carMov.start();
             return pos;
         }
@@ -542,7 +542,7 @@ public class GasolineraVista extends javax.swing.JFrame {
             habilitarCampos(pos);
             carM3.setLocation(1270, 270);
             carM3.setVisible(true);
-            this.carMov = new MovimientoCar(carM3,this.autosB.get(pos),790);
+            this.carMov = new MovimientoCar(carM3,this.autosB.get(pos),790,btnB3);
             carMov.start();
             return pos;
         }
@@ -552,7 +552,7 @@ public class GasolineraVista extends javax.swing.JFrame {
             habilitarCampos(pos);
             carM4.setLocation(1270, 270);
             carM4.setVisible(true);
-            this.carMov = new MovimientoCar(carM4,this.autosB.get(pos),1150);
+            this.carMov = new MovimientoCar(carM4,this.autosB.get(pos),1150,btnB4);
             carMov.start();
             return pos;
         } else {
@@ -569,26 +569,26 @@ public class GasolineraVista extends javax.swing.JFrame {
             switch (bomba) {
                 case 0:
                     this.txtCantB1.setEnabled(true);
-                    btnB1.setEnabled(true);
+                    
                     this.txtPrecio1.setText("0.0");
                     this.progress1.setValue(0);
                     break;
                 case 1:
                     this.txtCantB2.setEnabled(true);
-                    btnB2.setEnabled(true);
+                    
                     this.txtPrecio2.setText("0.0");
                     this.progress2.setValue(0);
                     break;
 
                 case 2:
                     this.txtCantB3.setEnabled(true);
-                    btnB3.setEnabled(true);
+                    
                     this.txtPrecio3.setText("0.0");
                     this.progress3.setValue(0);
                     break;
                 case 3:
                     this.txtCantB4.setEnabled(true);
-                    btnB4.setEnabled(true);
+                    
                     this.txtPrecio4.setText("0.0");
                     this.progress4.setValue(0);
                     break;
