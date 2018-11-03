@@ -5,6 +5,7 @@
  */
 package forms;
 
+import Threads.Bomba1;
 import gasolinera.ColaN;
 import java.util.ArrayList;
 import javax.swing.JLabel;
@@ -24,17 +25,19 @@ public class GasolineraVista extends javax.swing.JFrame {
 
     ArrayList<JLabel> autosL = new ArrayList<>();
     ArrayList<JLabel> autosB = new ArrayList<>();
+   
     private boolean bomba1 = false;
     private boolean bomba2 = false;
     private boolean bomba3 = false;
     private boolean bomba4 = false;
+    Bomba1 bombaTread1;
 
     public GasolineraVista() {
+        
         initComponents();
         ocultarCarros();
         insertarCarrosL();
         insertarCarrosB();
-
     }
 
     /**
@@ -46,15 +49,15 @@ public class GasolineraVista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gas2 = new javax.swing.JLabel();
-        gas3 = new javax.swing.JLabel();
-        gas1 = new javax.swing.JLabel();
+        txtPrecio1 = new javax.swing.JLabel();
+        txtPrecio2 = new javax.swing.JLabel();
+        txtPrecio3 = new javax.swing.JLabel();
+        txtPrecio4 = new javax.swing.JLabel();
         carF3 = new javax.swing.JLabel();
         carF6 = new javax.swing.JLabel();
         carF5 = new javax.swing.JLabel();
         carF1 = new javax.swing.JLabel();
         carF4 = new javax.swing.JLabel();
-        gas4 = new javax.swing.JLabel();
         carB4 = new javax.swing.JLabel();
         carF2 = new javax.swing.JLabel();
         carB1 = new javax.swing.JLabel();
@@ -64,8 +67,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         txtCantB4 = new javax.swing.JTextField();
         btnB4 = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel32 = new javax.swing.JLabel();
+        progress4 = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
         carW3 = new javax.swing.JLabel();
         carW1 = new javax.swing.JLabel();
@@ -75,20 +77,17 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txtCantB1 = new javax.swing.JTextField();
         btnB1 = new javax.swing.JButton();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        txtPrecio1 = new javax.swing.JLabel();
+        progress1 = new javax.swing.JProgressBar();
         panelB2 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         txtCantB2 = new javax.swing.JTextField();
         btnB2 = new javax.swing.JButton();
-        jProgressBar3 = new javax.swing.JProgressBar();
-        jLabel36 = new javax.swing.JLabel();
+        progress2 = new javax.swing.JProgressBar();
         panelB3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         txtCantB3 = new javax.swing.JTextField();
         btnB3 = new javax.swing.JButton();
-        jProgressBar4 = new javax.swing.JProgressBar();
-        jLabel35 = new javax.swing.JLabel();
+        progress3 = new javax.swing.JProgressBar();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -102,24 +101,38 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel33 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
+        gas1 = new javax.swing.JLabel();
+        gas2 = new javax.swing.JLabel();
+        gas3 = new javax.swing.JLabel();
+        gas4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gasolinera");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        gas2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        gas2.setText(" ");
-        getContentPane().add(gas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
+        txtPrecio1.setBackground(new java.awt.Color(0, 0, 0));
+        txtPrecio1.setFont(new java.awt.Font("Engravers MT", 1, 24)); // NOI18N
+        txtPrecio1.setForeground(new java.awt.Color(0, 102, 0));
+        txtPrecio1.setText(txtPrecio1.getText());
+        getContentPane().add(txtPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
-        gas3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        getContentPane().add(gas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, -1));
+        txtPrecio2.setFont(txtPrecio1.getFont());
+        txtPrecio2.setForeground(txtPrecio1.getForeground());
+        txtPrecio2.setText(txtPrecio1.getText());
+        getContentPane().add(txtPrecio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
 
-        gas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        getContentPane().add(gas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        txtPrecio3.setFont(txtPrecio1.getFont());
+        txtPrecio3.setForeground(txtPrecio1.getForeground());
+        txtPrecio3.setText(txtPrecio1.getText());
+        getContentPane().add(txtPrecio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, -1, -1));
+
+        txtPrecio4.setFont(txtPrecio1.getFont());
+        txtPrecio4.setForeground(txtPrecio1.getForeground());
+        txtPrecio4.setText(txtPrecio1.getText());
+        getContentPane().add(txtPrecio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 60, -1, -1));
 
         carF3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
         getContentPane().add(carF3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 210, 90));
@@ -135,9 +148,6 @@ public class GasolineraVista extends javax.swing.JFrame {
 
         carF4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
         getContentPane().add(carF4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 400, 210, 90));
-
-        gas4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
-        getContentPane().add(gas4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, -1, -1));
 
         carB4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carro.png"))); // NOI18N
         getContentPane().add(carB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 270, 210, 90));
@@ -158,19 +168,23 @@ public class GasolineraVista extends javax.swing.JFrame {
         panelB4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setText("Q.");
-        panelB4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 20, 20));
 
+        txtCantB4.setFont(txtCantB1.getFont());
+        txtCantB4.setHorizontalAlignment(txtCantB1.getHorizontalAlignment());
         txtCantB4.setBorder(null);
         txtCantB4.setEnabled(false);
-        panelB4.add(txtCantB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB4.add(txtCantB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 30));
 
         btnB4.setText("Iniciar");
         btnB4.setEnabled(false);
-        panelB4.add(btnB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        panelB4.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
-
-        jLabel32.setText("00.00");
-        panelB4.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        btnB4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnB4ActionPerformed(evt);
+            }
+        });
+        panelB4.add(btnB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        panelB4.add(progress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
         getContentPane().add(panelB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 40, 200, 220));
 
@@ -193,12 +207,13 @@ public class GasolineraVista extends javax.swing.JFrame {
         panelB1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setText("Q.");
-        panelB1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 20, 20));
 
-        txtCantB1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtCantB1.setFont(new java.awt.Font("Engravers MT", 2, 18)); // NOI18N
+        txtCantB1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCantB1.setBorder(null);
         txtCantB1.setEnabled(false);
-        panelB1.add(txtCantB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB1.add(txtCantB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 30));
 
         btnB1.setText("Iniciar");
         btnB1.setEnabled(false);
@@ -207,11 +222,8 @@ public class GasolineraVista extends javax.swing.JFrame {
                 btnB1ActionPerformed(evt);
             }
         });
-        panelB1.add(btnB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        panelB1.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 40));
-
-        txtPrecio1.setText("00.00");
-        panelB1.add(txtPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 40, 20));
+        panelB1.add(btnB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        panelB1.add(progress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, 20));
 
         getContentPane().add(panelB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 200, 220));
 
@@ -219,19 +231,23 @@ public class GasolineraVista extends javax.swing.JFrame {
         panelB2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setText("Q.");
-        panelB2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 20, 20));
 
+        txtCantB2.setFont(txtCantB1.getFont());
+        txtCantB2.setHorizontalAlignment(txtCantB1.getHorizontalAlignment());
         txtCantB2.setBorder(null);
         txtCantB2.setEnabled(false);
-        panelB2.add(txtCantB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB2.add(txtCantB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 30));
 
         btnB2.setText("Iniciar");
         btnB2.setEnabled(false);
-        panelB2.add(btnB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        panelB2.add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
-
-        jLabel36.setText("00.00");
-        panelB2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        btnB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnB2ActionPerformed(evt);
+            }
+        });
+        panelB2.add(btnB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        panelB2.add(progress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
         getContentPane().add(panelB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 200, 220));
 
@@ -239,19 +255,23 @@ public class GasolineraVista extends javax.swing.JFrame {
         panelB3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setText("Q.");
-        panelB3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
+        panelB3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 20, 20));
 
+        txtCantB3.setFont(txtCantB1.getFont());
+        txtCantB3.setHorizontalAlignment(txtCantB1.getHorizontalAlignment());
         txtCantB3.setBorder(null);
         txtCantB3.setEnabled(false);
-        panelB3.add(txtCantB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+        panelB3.add(txtCantB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 30));
 
         btnB3.setText("Iniciar");
         btnB3.setEnabled(false);
-        panelB3.add(btnB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        panelB3.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
-
-        jLabel35.setText("00.00");
-        panelB3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        btnB3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnB3ActionPerformed(evt);
+            }
+        });
+        panelB3.add(btnB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        panelB3.add(progress3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 162, 150, 20));
 
         getContentPane().add(panelB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 40, 200, 220));
 
@@ -294,7 +314,7 @@ public class GasolineraVista extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 690, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 660, -1, -1));
 
         jButton6.setText("Verificar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -302,10 +322,7 @@ public class GasolineraVista extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 690, -1, -1));
-
-        jLabel33.setText("00.00");
-        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 720, -1, -1));
 
         jButton7.setText("prueba");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -317,6 +334,19 @@ public class GasolineraVista extends javax.swing.JFrame {
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gramaH.jpg"))); // NOI18N
         getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, 430));
+
+        gas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        getContentPane().add(gas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        gas2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        gas2.setText(" ");
+        getContentPane().add(gas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
+
+        gas3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        getContentPane().add(gas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, -1));
+
+        gas4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dispensario2.png"))); // NOI18N
+        getContentPane().add(gas4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -364,16 +394,64 @@ public class GasolineraVista extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnB1ActionPerformed
-        if (txtCantB1.getText().equals("")) {
-            System.out.println("Ingrese un valor ");
-        } else {
-            int cant = Integer.parseInt(txtCantB1.getText());
-            for (int i = 0; i < cant; i++) {
-                txtPrecio1.setText(i + "");
+        try {
+            if (txtCantB1.getText().equals("")) {
+                System.out.println("Ingrese un valor ");
+            } else {
+                int cant = Integer.parseInt(txtCantB1.getText());
+                bombaTread1 = new Bomba1(this.txtPrecio1, this.progress1, cant, this.carB1, 0);
+                this.bombaTread1.start();
+                this.desabilitarCampos(0);
             }
-            this.desabilitarCampos(0);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_btnB1ActionPerformed
+
+    private void btnB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnB2ActionPerformed
+        try {
+            if (txtCantB2.getText().equals("")) {
+                System.out.println("Ingrese un valor ");
+            } else {
+                int cant = Integer.parseInt(txtCantB2.getText());
+                bombaTread1 = new Bomba1(this.txtPrecio2, this.progress2, cant, this.carB2, 1);
+                this.bombaTread1.start();
+                this.desabilitarCampos(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnB2ActionPerformed
+
+    private void btnB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnB3ActionPerformed
+        try {
+            if (txtCantB3.getText().equals("")) {
+                System.out.println("Ingrese un valor ");
+            } else {
+                int cant = Integer.parseInt(txtCantB3.getText());
+                bombaTread1 = new Bomba1(this.txtPrecio3, this.progress3, cant, this.carB3, 2);
+                this.bombaTread1.start();
+                this.desabilitarCampos(2);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnB3ActionPerformed
+
+    private void btnB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnB4ActionPerformed
+        try {
+            if (txtCantB2.getText().equals("")) {
+                System.out.println("Ingrese un valor ");
+            } else {
+                int cant = Integer.parseInt(txtCantB4.getText());
+                bombaTread1 = new Bomba1(this.txtPrecio4, this.progress4, cant, this.carB4, 3);
+                this.bombaTread1.start();
+                this.desabilitarCampos(3);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnB4ActionPerformed
 
     private int verificarBomba() {
         int pos = 0;
@@ -440,7 +518,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         }
     }
 
-    private void desabilitarCampos(int bomba) {
+    public void desabilitarCampos(int bomba) {
         try {
             switch (bomba) {
                 case 0:
@@ -448,19 +526,26 @@ public class GasolineraVista extends javax.swing.JFrame {
                     this.txtCantB1.setText("");
                     btnB1.setEnabled(false);
                     bomba1 = false;
-                    this.autosB.get(bomba).setVisible(false);
+                    //this.autosB.get(bomba).setVisible(false);
                     break;
                 case 1:
                     this.txtCantB2.setEnabled(false);
+                    this.txtCantB2.setText("");
                     btnB2.setEnabled(false);
+                    bomba2 = false;
                     break;
                 case 2:
                     this.txtCantB3.setEnabled(false);
+                    this.txtCantB3.setText("");
+
                     btnB3.setEnabled(false);
+                    bomba3 = false;
                     break;
                 case 3:
                     this.txtCantB4.setEnabled(false);
+                    this.txtCantB4.setText("");
                     btnB4.setEnabled(false);
+                    bomba4 = false;
                     break;
                 default:
                     break;
@@ -540,6 +625,8 @@ public class GasolineraVista extends javax.swing.JFrame {
         autosB.add(carB3);
         autosB.add(carB4);
     }
+    
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnB1;
     private javax.swing.JButton btnB2;
@@ -583,23 +670,53 @@ public class GasolineraVista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
-    private javax.swing.JProgressBar jProgressBar4;
     private javax.swing.JPanel panelB1;
     private javax.swing.JPanel panelB2;
     private javax.swing.JPanel panelB3;
     private javax.swing.JPanel panelB4;
+    private javax.swing.JProgressBar progress1;
+    private javax.swing.JProgressBar progress2;
+    private javax.swing.JProgressBar progress3;
+    private javax.swing.JProgressBar progress4;
     private javax.swing.JTextField txtCantB1;
     private javax.swing.JTextField txtCantB2;
     private javax.swing.JTextField txtCantB3;
     private javax.swing.JTextField txtCantB4;
     private javax.swing.JLabel txtPrecio1;
+    private javax.swing.JLabel txtPrecio2;
+    private javax.swing.JLabel txtPrecio3;
+    private javax.swing.JLabel txtPrecio4;
     // End of variables declaration//GEN-END:variables
 
+    public boolean isBomba1() {
+        return bomba1;
+    }
+
+    public void setBomba1(boolean bomba1) {
+        this.bomba1 = bomba1;
+    }
+
+    public boolean isBomba2() {
+        return bomba2;
+    }
+
+    public void setBomba2(boolean bomba2) {
+        this.bomba2 = bomba2;
+    }
+
+    public boolean isBomba3() {
+        return bomba3;
+    }
+
+    public void setBomba3(boolean bomba3) {
+        this.bomba3 = bomba3;
+    }
+
+    public boolean isBomba4() {
+        return bomba4;
+    }
+
+    public void setBomba4(boolean bomba4) {
+        this.bomba4 = bomba4;
+    }
 }
