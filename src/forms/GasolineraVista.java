@@ -170,8 +170,8 @@ public class GasolineraVista extends javax.swing.JFrame {
         jLabel12.setText("Q.");
         panelB4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 20, 20));
 
-        txtCantB4.setFont(txtCantB1.getFont());
-        txtCantB4.setHorizontalAlignment(txtCantB1.getHorizontalAlignment());
+        txtCantB4.setFont(new java.awt.Font("Engravers MT", 2, 18)); // NOI18N
+        txtCantB4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCantB4.setBorder(null);
         txtCantB4.setEnabled(false);
         panelB4.add(txtCantB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 30));
@@ -374,7 +374,7 @@ public class GasolineraVista extends javax.swing.JFrame {
         if (fifo.size() == 0) {
             System.out.println("No hay carros en la fila");
         } else {
-            if (bomba1 && bomba2 && bomba3 && bomba4) {
+            if (this.carB1.isVisible() && carB2.isVisible() && carB3.isVisible() && carB4.isVisible()) {
                 System.out.println("Todas estan ocupadas");
             } else {
                 int i = fifo.pop();
@@ -440,7 +440,7 @@ public class GasolineraVista extends javax.swing.JFrame {
 
     private void btnB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnB4ActionPerformed
         try {
-            if (txtCantB2.getText().equals("")) {
+            if (txtCantB4.getText().equals("")) {
                 System.out.println("Ingrese un valor ");
             } else {
                 int cant = Integer.parseInt(txtCantB4.getText());
@@ -455,26 +455,26 @@ public class GasolineraVista extends javax.swing.JFrame {
 
     private int verificarBomba() {
         int pos = 0;
-        if (!bomba1) {
+        if (!carB1.isVisible()) {
             pos = 0;
             bomba1 = true;
             habilitarCampos(pos);
             return pos;
         }
-        if (!bomba2) {
+        if (!carB2.isVisible()) {
             pos = 1;
             bomba2 = true;
             habilitarCampos(pos);
             return pos;
         }
 
-        if (!bomba3) {
+        if (!carB3.isVisible()) {
             pos = 2;
             bomba3 = true;
             habilitarCampos(pos);
             return pos;
         }
-        if (!bomba4) {
+        if (!carB4.isVisible()) {
             pos = 3;
             bomba4 = true;
             habilitarCampos(pos);
@@ -494,19 +494,27 @@ public class GasolineraVista extends javax.swing.JFrame {
                 case 0:
                     this.txtCantB1.setEnabled(true);
                     btnB1.setEnabled(true);
+                    this.txtPrecio1.setText("0.0");
+                    this.progress1.setValue(0);
                     break;
                 case 1:
                     this.txtCantB2.setEnabled(true);
                     btnB2.setEnabled(true);
+                    this.txtPrecio2.setText("0.0");
+                    this.progress2.setValue(0);
                     break;
 
                 case 2:
                     this.txtCantB3.setEnabled(true);
                     btnB3.setEnabled(true);
+                    this.txtPrecio3.setText("0.0");
+                    this.progress3.setValue(0);
                     break;
                 case 3:
                     this.txtCantB4.setEnabled(true);
                     btnB4.setEnabled(true);
+                    this.txtPrecio4.setText("0.0");
+                    this.progress4.setValue(0);
                     break;
 
                 default:

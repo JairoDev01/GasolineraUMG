@@ -252,12 +252,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCantB4">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection component="txtCantB1" name="font" type="property"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Engravers MT" size="18" style="2"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection component="txtCantB1" name="horizontalAlignment" type="property"/>
-            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
